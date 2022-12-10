@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thai Ha</title>
   <link rel="stylesheet" href="https://vtxicons.vercel.app/all.css" />
   <style>
     html,
@@ -10,7 +11,6 @@
       margin: 0;
       padding: 0;
     }
-
     #app {
       position: relative;
       display: flex;
@@ -96,6 +96,20 @@
       text-decoration: none;
       color: white;
     }
+    .btn{
+      background: none;
+      border: 1px solid white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: white;
+       transition-duration: 0.5s;
+       margin: 0 5px;
+    }
+    .btn:hover{
+      background: white;
+      color: black;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 
@@ -104,9 +118,18 @@
     <div class="circle_1"></div>
     <div class="circle_2"></div>
     <div class="card">
+
       <img class="card_img" src="https://graph.facebook.com/100009232402309/picture?type=large&width=500&height=500&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" alt="image">
       <h1>Thái Hà</h1>
       <p>Em muốn lái chị</p>
+
+      <button class="btn" onclick="playAudio();">
+        Play
+      </button>
+      <button class="btn" onclick="pauseAudio();">
+        Pause
+      </button>
+      
       <div class="card_social">
         <a
         href="https://www.facebook.com/profile.php?id=100009232402309"
@@ -116,18 +139,16 @@
       </div>
     </div>
   </div>
+  <audio id="audio" src="audio.mp3"></audio>
 </body>
 <script>
-  //create table
-  var table = document.createElement("table");
-  table.setAttribute("border", "1");
-  table.setAttribute("width", "100%");
-  table.setAttribute("height", "100%");
-  table.setAttribute("cellspacing", "0");
-  table.setAttribute("cellpadding", "0");
-  table.setAttribute("bordercolor", "white");
-  document.body.appendChild(table);
-
+  var audio = document.getElementById("audio");
+  function playAudio() {
+    audio.play();
+  }
+  function pauseAudio() {
+    audio.pause();
+  }
 </script>
 
 </html>
